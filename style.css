@@ -22,7 +22,45 @@ body{
   direction: rtl;
   text-align: right;
   font-family:'Cairo',sans-serif;
-  
+  .side-decor{
+  position: fixed;
+  top: 120px;
+  right: 12px;
+  width: 48px;
+  padding: 14px 8px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: var(--shadow);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.star{
+  color: #ffd86b;
+  font-size: 18px;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(255,216,107,.7);
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.d1{ background:#ff6fb1; }
+.d2{ background:#8e7dff; }
+.d3{ background:#7de3ff; }
+.s1{ transform: rotate(10deg); }
+.s2{ transform: rotate(-8deg); }
+.s3{ transform: rotate(12deg); }
+.s4{ transform: rotate(-12deg); }
   /* خلفية الصورة من بنترست مع طبقة بنفسجية لتناسق ووضوح النصوص */
   background: 
     linear-gradient(rgba(18, 10, 42, 0.78), rgba(18, 10, 42, 0.88)),
