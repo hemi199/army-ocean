@@ -3,12 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARMY MAGICK</title>
+    <title>ARMY MAGICK - عجلة النقاط</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/jpeg" href="https://i.ibb.co/3ZcLddD/image.jpg">
+    <style>
+      /* تنسيقات عجلة النقاط */
+      .wheel-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 40px auto;
+        width: 100%;
+      }
+
+      .wheel-area {
+        position: relative;
+        width: min(420px, 85vw);
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
+      }
+
+      .pointer {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-bottom: 34px solid #ffd86b;
+        filter: drop-shadow(0 0 8px rgba(255,216,107,.6));
+        z-index: 10;
+      }
+
+      .wheel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 10px solid rgba(255,255,255,.15);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: transform 4s cubic-bezier(.1,.7,.1,1);
+        transform: rotate(0deg);
+        background: #222;
+      }
+
+      .slice {
+        position: absolute;
+        inset: 0;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 35px;
+        padding-right: 35px;
+        font-weight: 800;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0,0,0,.4);
+        transform-origin: center center;
+      }
+
+      .slice span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        font-size: 0.95rem;
+        transform: rotate(25deg);
+      }
+
+      .slice .icon {
+        font-size: 1.3rem;
+      }
+
+      .s1 { background: linear-gradient(135deg,#ff6fb1,#ff8dc0); transform: rotate(0deg); }
+      .s2 { background: linear-gradient(135deg,#8e7dff,#a99bff); transform: rotate(51.4286deg); }
+      .s3 { background: linear-gradient(135deg,#7de3ff,#5bc4e8); transform: rotate(102.8571deg); }
+      .s4 { background: linear-gradient(135deg,#ffd86b,#ffbf3f); transform: rotate(154.2857deg); }
+      .s5 { background: linear-gradient(135deg,#7dffb2,#41d68c); transform: rotate(205.7142deg); }
+      .s6 { background: linear-gradient(135deg,#ff8e7d,#ff6a59); transform: rotate(257.1428deg); }
+      .s7 { background: linear-gradient(135deg,#c77dff,#9b5cff); transform: rotate(308.5714deg); }
+
+      .center-btn {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: radial-gradient(circle at top,#fff 0%, #ffd86b 40%, #f2b93b 100%);
+        box-shadow: 0 0 0 8px rgba(255,255,255,.12), 0 10px 25px rgba(0,0,0,.3);
+        z-index: 5;
+        display: grid;
+        place-items: center;
+        color: #2b2146;
+        font-weight: 900;
+        text-align: center;
+        line-height: 1.1;
+        font-size: 0.95rem;
+      }
+
+      .controls {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .spin-button {
+        border: none;
+        cursor: pointer;
+        border-radius: 16px;
+        padding: 12px 28px;
+        font-family: inherit;
+        font-weight: 800;
+        font-size: 1.05rem;
+        color: #fff;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: var(--shadow);
+        transition: transform .2s, opacity .2s;
+      }
+
+      .spin-button:hover { transform: translateY(-2px); }
+      .spin-button:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+      .score-board {
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.15);
+        font-weight: 700;
+      }
+
+      .result-msg {
+        min-height: 30px;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #ffd86b;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -18,6 +159,7 @@
         <nav class="menu">
           <a href="#">الرئيسية</a>
           <a href="#members">الأعضاء</a>
+          <a href="#games">الألعاب</a>
         </nav>
 
         <a href="#" class="link-btn">تسجيل الدخول</a>
@@ -56,7 +198,7 @@
               <div class="hero-avatar"></div>
               <div>
                 <strong>PARTY PARTY YAAAAH</strong>
-                <p> ستجد هنا العاب و انشطه ترفيهيه تخص الاعضاء</p>
+                <p>ستجد هنا العاب و انشطه ترفيهيه تخص الاعضاء</p>
               </div>
             </div>
             <div class="hero-mini">
@@ -69,12 +211,12 @@
 
       <section class="quick-links container">
         <a href="#photos" class="quick-card">
-          <h3>الصور ا</h3>
+          <h3>الصور</h3>
           <p>PONO PONOYAH.</p>
         </a>
         <a href="#games" class="quick-card">
-          <h3>الألعاب الخفيفة</h3>
-          <p>تحديات بسيطة وسريعة داخل الموقع.</p>
+          <h3>عجلة النقاط والألعاب</h3>
+          <p>جربي حظك واجمعي النقاط!</p>
         </a>
         <a href="#messages" class="quick-card">
           <h3>الرسايل الطريفة</h3>
@@ -84,6 +226,54 @@
           <h3>الآراء والنقاش</h3>
           <p>شارك فكرتك وتعرف على آراء الآخرين.</p>
         </a>
+      </section>
+
+      <!-- قسم عجلة النقاط والألعاب -->
+      <section class="section container" id="games">
+        <div class="section-head">
+          <h2>عجلة النقاط التفاعلية</h2>
+          <a href="#">الألعاب اليومية</a>
+        </div>
+
+        <div class="wheel-section">
+          <div class="wheel-area">
+            <div class="pointer"></div>
+            <div class="wheel" id="wheel">
+              <div class="slice s1"><span><div class="icon">★</div><div>10</div></span></div>
+              <div class="slice s2"><span><div class="icon">●</div><div>20</div></span></div>
+              <div class="slice s3"><span><div class="icon">✦</div><div>30</div></span></div>
+              <div class="slice s4"><span><div class="icon">✿</div><div>40</div></span></div>
+              <div class="slice s5"><span><div class="icon">★</div><div>50</div></span></div>
+              <div class="slice s6"><span><div class="icon">●</div><div>60</div></span></div>
+              <div class="slice s7"><span><div class="icon">✦</div><div>70</div></span></div>
+              <div class="center-btn">لف<br>العجلة</div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="spin-button" id="spinBtn">لف العجلة!</button>
+            <div class="score-board">النقاط: <span id="score">0</span></div>
+          </div>
+
+          <div class="result-msg" id="result"></div>
+        </div>
+
+        <div class="grid cards-3">
+          <article class="info-card">
+            <h3>لعبة التحدي السريع</h3>
+            <p>أسئلة قصيرة وتفاعل ممتع مع الأعضاء.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>لعبة التخمين</h3>
+            <p>خمن الصورة أو العبارة في وقت قصير.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>لعبة اليوم</h3>
+            <p>لعبة صغيرة تظهر في الصفحة الرئيسية يوميًا.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section container" id="photos">
@@ -97,7 +287,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 1</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
 
@@ -105,7 +295,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 2</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
 
@@ -113,7 +303,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 3</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
 
@@ -121,7 +311,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 4</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
         </div>
@@ -172,30 +362,6 @@
         </div>
       </section>
 
-      <section class="section container" id="games">
-        <div class="section-head">
-          <h2>الألعاب اليوم</h2>
-          <a href="#">ابدأ اللعب</a>
-        </div>
-
-        <div class="grid cards-3">
-          <article class="info-card">
-            <h3>لعبة التحدي السريع</h3>
-            <p>أسئلة قصيرة وتفاعل ممتع مع الأعضاء.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>لعبة التخمين</h3>
-            <p>خمن الصورة أو العبارة في وقت قصير.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>لعبة اليوم</h3>
-            <p>لعبة صغيرة تظهر في الصفحة الرئيسية يوميًا.</p>
-          </article>
-        </div>
-      </section>
-
       <section class="section container" id="messages">
         <div class="section-head">
           <h2>ملاحظه جنقوقيه</h2>
@@ -221,5 +387,43 @@
         </div>
       </div>
     </footer>
+
+    <!-- كود الدوران وتراكم النقاط -->
+    <script>
+      const wheel = document.getElementById('wheel');
+      const spinBtn = document.getElementById('spinBtn');
+      const scoreEl = document.getElementById('score');
+      const resultEl = document.getElementById('result');
+
+      const rewards = [10, 20, 30, 40, 50, 60, 70];
+      let currentRotation = 0;
+      let totalScore = 0;
+      let spinning = false;
+
+      spinBtn.addEventListener('click', () => {
+        if (spinning) return;
+        spinning = true;
+        spinBtn.disabled = true;
+        resultEl.textContent = '';
+
+        const extraSpins = 6 + Math.floor(Math.random() * 4);
+        const prizeIndex = Math.floor(Math.random() * rewards.length);
+        const sliceAngle = 360 / rewards.length;
+        const targetAngle = 360 - (prizeIndex * sliceAngle + sliceAngle / 2);
+        const randomJitter = Math.floor(Math.random() * 25) - 12;
+
+        currentRotation += extraSpins * 360 + targetAngle + randomJitter;
+        wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+        setTimeout(() => {
+          const gained = rewards[prizeIndex];
+          totalScore += gained;
+          scoreEl.textContent = totalScore;
+          resultEl.textContent = `🎉 ربحتي ${gained} نقطة!`;
+          spinBtn.disabled = false;
+          spinning = false;
+        }, 4000);
+      });
+    </script>
   </body>
 </html>
