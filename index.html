@@ -18,6 +18,7 @@
         <nav class="menu">
           <a href="#">الرئيسية</a>
           <a href="#members">الأعضاء</a>
+          <a href="#games">الألعاب</a>
         </nav>
 
         <a href="#" class="link-btn">تسجيل الدخول</a>
@@ -56,7 +57,7 @@
               <div class="hero-avatar"></div>
               <div>
                 <strong>PARTY PARTY YAAAAH</strong>
-                <p> ستجد هنا العاب و انشطه ترفيهيه تخص الاعضاء</p>
+                <p>ستجد هنا العاب و انشطه ترفيهيه تخص الاعضاء</p>
               </div>
             </div>
             <div class="hero-mini">
@@ -69,12 +70,12 @@
 
       <section class="quick-links container">
         <a href="#photos" class="quick-card">
-          <h3>الصور ا</h3>
+          <h3>الصور</h3>
           <p>PONO PONOYAH.</p>
         </a>
         <a href="#games" class="quick-card">
-          <h3>الألعاب الخفيفة</h3>
-          <p>تحديات بسيطة وسريعة داخل الموقع.</p>
+          <h3>عجلة النقاط والألعاب</h3>
+          <p>جربي حظك واجمعي النقاط!</p>
         </a>
         <a href="#messages" class="quick-card">
           <h3>الرسايل الطريفة</h3>
@@ -84,6 +85,54 @@
           <h3>الآراء والنقاش</h3>
           <p>شارك فكرتك وتعرف على آراء الآخرين.</p>
         </a>
+      </section>
+
+      <!-- قسم عجلة النقاط والألعاب -->
+      <section class="section container" id="games">
+        <div class="section-head">
+          <h2>عجلة النقاط التفاعلية</h2>
+          <a href="#">الألعاب اليومية</a>
+        </div>
+
+        <div class="wheel-section">
+          <div class="wheel-area">
+            <div class="pointer"></div>
+            <div class="wheel" id="wheel">
+              <div class="slice s1"><span><div class="icon">★</div><div>10</div></span></div>
+              <div class="slice s2"><span><div class="icon">●</div><div>20</div></span></div>
+              <div class="slice s3"><span><div class="icon">✦</div><div>30</div></span></div>
+              <div class="slice s4"><span><div class="icon">✿</div><div>40</div></span></div>
+              <div class="slice s5"><span><div class="icon">★</div><div>50</div></span></div>
+              <div class="slice s6"><span><div class="icon">●</div><div>60</div></span></div>
+              <div class="slice s7"><span><div class="icon">✦</div><div>70</div></span></div>
+              <div class="center-btn">لف<br>العجلة</div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="spin-button" id="spinBtn">لف العجلة!</button>
+            <div class="score-board">النقاط: <span id="score">0</span></div>
+          </div>
+
+          <div class="result-msg" id="result"></div>
+        </div>
+
+        <div class="grid cards-3">
+          <article class="info-card">
+            <h3>لعبة التحدي السريع</h3>
+            <p>أسئلة قصيرة وتفاعل ممتع مع الأعضاء.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>لعبة التخمين</h3>
+            <p>خمن الصورة أو العبارة في وقت قصير.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>لعبة اليوم</h3>
+            <p>لعبة صغيرة تظهر في الصفحة الرئيسية يوميًا.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section container" id="photos">
@@ -97,7 +146,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 1</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
 
@@ -105,7 +154,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 2</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
 
@@ -113,7 +162,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 3</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
 
@@ -121,7 +170,7 @@
             <div class="card-image placeholder-img"></div>
             <div class="card-body">
               <h3>صورة طريفة 4</h3>
-              <p>وصف قصير للصورة أو المناسبـة المرتبطة بها.</p>
+              <p>وصف قصير للصورة أو المناسبة المرتبطة بها.</p>
             </div>
           </article>
         </div>
@@ -172,30 +221,6 @@
         </div>
       </section>
 
-      <section class="section container" id="games">
-        <div class="section-head">
-          <h2>الألعاب اليوم</h2>
-          <a href="#">ابدأ اللعب</a>
-        </div>
-
-        <div class="grid cards-3">
-          <article class="info-card">
-            <h3>لعبة التحدي السريع</h3>
-            <p>أسئلة قصيرة وتفاعل ممتع مع الأعضاء.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>لعبة التخمين</h3>
-            <p>خمن الصورة أو العبارة في وقت قصير.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>لعبة اليوم</h3>
-            <p>لعبة صغيرة تظهر في الصفحة الرئيسية يوميًا.</p>
-          </article>
-        </div>
-      </section>
-
       <section class="section container" id="messages">
         <div class="section-head">
           <h2>ملاحظه جنقوقيه</h2>
@@ -221,5 +246,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- ربط ملف الجافاسكريبت الخارجي -->
+    <script src="script.js"></script>
   </body>
 </html>
