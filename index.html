@@ -1,253 +1,314 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARMY MAGICK</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/3ZcLddD/image.jpg">
-  </head>
-  <body>
-    <header class="header">
-      <div class="container nav">
-        <a href="#" class="logo">ARMY Ocean</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <nav class="menu">
-          <a href="#">الرئيسية</a>
-          <a href="#members">الأعضاء</a>
-          <a href="#games">الألعاب</a>
-        </nav>
+  <title>ARMY MAGICK</title>
 
-        <a href="#" class="link-btn">تسجيل الدخول</a>
-      </div>
-    </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- الشريط الجانبي التزييني -->
-    <div class="side-decor">
-      <span class="star s1">★</span>
-      <span class="dot d1"></span>
-      <span class="star s2">✦</span>
-      <span class="dot d2"></span>
-      <span class="star s3">★</span>
-      <span class="dot d3"></span>
-      <span class="star s4">✦</span>
-      <span class="dot d4"></span>
-      <span class="star s5">★</span>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">ARMY Ocean</a>
+
+      <nav class="menu">
+        <a href="#">الرئيسية</a>
+        <a href="#members">الأعضاء</a>
+        <a href="#photos">الصور</a>
+        <a href="#wheel">العجلة</a>
+        <a href="#games">الألعاب</a>
+        <a href="#messages">الرسايل</a>
+      </nav>
+
+      <a href="#" class="link-btn">تسجيل الدخول</a>
     </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-content">
-          <div class="hero-text">
-            <span class="badge"> fan page </span>
-            <h1> Party Party yeahhh</h1>
-            <p>Bangtansonyondan.</p>
-            <div class="hero-actions">
-              <a href="#members" class="btn primary">ابدأ الآن</a>
-              <a href="#photos" class="btn secondary">تصفح الصور</a>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <h3>BANGTAN</h3>
-            <div class="hero-feature">
-              <div class="hero-avatar"></div>
-              <div>
-                <strong>PARTY PARTY YAAAAH</strong>
-                <p>ستجد هنا العاب و انشطه ترفيهيه تخص الاعضاء</p>
-              </div>
-            </div>
-            <div class="hero-mini">
-              <span>Don't forget</span>
-              <p>“ if you wanna be animals baby we can be animals”</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="quick-links container">
-        <a href="#photos" class="quick-card">
-          <h3>الصور</h3>
-          <p>PONO PONOYAH.</p>
-        </a>
-        <a href="#games" class="quick-card">
-          <h3>عجلة النقاط والألعاب</h3>
-          <p>جربي حظك واجمعي النقاط!</p>
-        </a>
-        <a href="#messages" class="quick-card">
-          <h3>الرسايل الطريفة</h3>
-          <p>اقرأ وشارك رسائل وميمز لطيفة.</p>
-        </a>
-        <a href="#talk" class="quick-card">
-          <h3>الآراء والنقاش</h3>
-          <p>شارك فكرتك وتعرف على آراء الآخرين.</p>
-        </a>
-      </section>
-
-      <!-- قسم عجلة النقاط والألعاب -->
-      <section class="section container" id="games">
-        <div class="section-head">
-          <h2>عجلة النقاط التفاعلية</h2>
-          <a href="#">الألعاب اليومية</a>
-        </div>
-
-        <div class="wheel-section">
-          <div class="wheel-area">
-            <div class="pointer"></div>
-            <div class="wheel" id="wheel">
-              <div class="slice s1"><span><div class="icon">★</div><div>10</div></span></div>
-              <div class="slice s2"><span><div class="icon">●</div><div>20</div></span></div>
-              <div class="slice s3"><span><div class="icon">✦</div><div>30</div></span></div>
-              <div class="slice s4"><span><div class="icon">✿</div><div>40</div></span></div>
-              <div class="slice s5"><span><div class="icon">★</div><div>50</div></span></div>
-              <div class="slice s6"><span><div class="icon">●</div><div>60</div></span></div>
-              <div class="slice s7"><span><div class="icon">✦</div><div>70</div></span></div>
-              <div class="center-btn">لف<br>العجلة</div>
-            </div>
-          </div>
-
-          <div class="controls">
-            <button class="spin-button" id="spinBtn">لف العجلة!</button>
-            <div class="score-board">النقاط: <span id="score">0</span></div>
-          </div>
-
-          <div class="result-msg" id="result"></div>
-        </div>
-
-        <div class="grid cards-3">
-          <article class="info-card">
-            <h3>لعبة التحدي السريع</h3>
-            <p>أسئلة قصيرة وتفاعل ممتع مع الأعضاء.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>لعبة التخمين</h3>
-            <p>خمن الصورة أو العبارة في وقت قصير.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>لعبة اليوم</h3>
-            <p>لعبة صغيرة تظهر في الصفحة الرئيسية يوميًا.</p>
-          </article>
-        </div>
-      </section>
-
-     <section class="section container" id="photos">
-  <div class="section-head">
-    <h2>أحدث الصور</h2>
-    <a href="#">عرض الكل</a>
+  <div class="side-decor">
+    <span class="star">★</span>
+    <span class="dot pink"></span>
+    <span class="star">✦</span>
+    <span class="dot purple"></span>
+    <span class="star">★</span>
+    <span class="dot blue"></span>
+    <span class="star">✦</span>
+    <span class="dot yellow"></span>
   </div>
 
-  <div class="grid cards-4">
-    <article class="card">
-      <img src="https://i.ibb.co/3ZcLddD/image.jpg" alt="صورة 1" class="member-photo">
-      <div class="card-body">
-        <h3>صورة طريفة 1</h3>
-        <p>وصف قصير للصورة.</p>
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div class="hero-text">
+          <span class="badge">fan page</span>
+
+          <h1>Party Party yeahhh</h1>
+
+          <p>Bangtan Sonyeondan</p>
+
+          <div class="hero-actions">
+            <a href="#members" class="btn primary">ابدأ الآن</a>
+            <a href="#photos" class="btn secondary">تصفح الصور</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>BANGTAN</h3>
+
+          <div class="hero-feature">
+            <div class="hero-avatar"></div>
+
+            <div>
+              <strong>PARTY PARTY YAAAAH</strong>
+              <p>ستجد هنا ألعابًا وأنشطة ترفيهية تخص الأعضاء.</p>
+            </div>
+          </div>
+
+          <div class="hero-mini">
+            <span>Don't forget</span>
+            <p>“We Are Together, Bulletproof”</p>
+          </div>
+        </div>
+
       </div>
-    </article>
+    </section>
 
-    <article class="card">
-      <img src="https://i.ibb.co/3ZcLddD/image.jpg" alt="صورة 2" class="member-photo">
-      <div class="card-body">
-        <h3>صورة طريفة 2</h3>
-        <p>وصف قصير للصورة.</p>
+    <section class="quick-links container">
+
+      <a href="#photos" class="quick-card">
+        <h3>الصور</h3>
+        <p>شاهد صور الأعضاء والمنشورات المميزة.</p>
+      </a>
+
+      <a href="#wheel" class="quick-card">
+        <h3>عجلة النقاط</h3>
+        <p>لف العجلة واربح نقاطًا عشوائية.</p>
+      </a>
+
+      <a href="#messages" class="quick-card">
+        <h3>رسائل الأعضاء</h3>
+        <p>اقرأ وشارك رسائل وميمز لطيفة.</p>
+      </a>
+
+      <a href="#games" class="quick-card">
+        <h3>الألعاب</h3>
+        <p>تحديات بسيطة وسريعة داخل الموقع.</p>
+      </a>
+
+    </section>
+
+    <section class="section container" id="photos">
+      <div class="section-head">
+        <h2>أحدث الصور</h2>
+        <a href="#">عرض الكل</a>
       </div>
-    </article>
 
-    <article class="card">
-      <img src="https://i.ibb.co/3ZcLddD/image.jpg" alt="صورة 3" class="member-photo">
-      <div class="card-body">
-        <h3>صورة طريفة 3</h3>
-        <p>وصف قصير للصورة.</p>
+      <div class="grid cards-4">
+
+        <article class="card">
+          <div class="card-image image-one"></div>
+          <div class="card-body">
+            <h3>صورة طريفة 1</h3>
+            <p>لحظة لطيفة من عالم ARMY.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image image-two"></div>
+          <div class="card-body">
+            <h3>صورة طريفة 2</h3>
+            <p>شارك أجمل لحظاتك مع الأعضاء.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image image-three"></div>
+          <div class="card-body">
+            <h3>صورة طريفة 3</h3>
+            <p>صور ومواقف لا تُنسى.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image image-four"></div>
+          <div class="card-body">
+            <h3>صورة طريفة 4</h3>
+            <p>أجواء ممتعة مع مجتمع الفانز.</p>
+          </div>
+        </article>
+
       </div>
-    </article>
+    </section>
 
-    <article class="card">
-      <img src="https://i.ibb.co/3ZcLddD/image.jpg" alt="صورة 4" class="member-photo">
-      <div class="card-body">
-        <h3>صورة طريفة 4</h3>
-        <p>وصف قصير للصورة.</p>
+    <section class="section container" id="members">
+      <div class="section-head">
+        <h2>الأعضاء المميزون</h2>
+        <a href="#">كل الأعضاء</a>
       </div>
-    </article>
-  </div>
-</section>
 
-      <!-- قسم الأعضاء -->
-      <section class="section container" id="members">
-        <div class="section-head">
-          <h2>الأعضاء المميزون</h2>
-          <a href="#">كل الأعضاء</a>
-        </div>
+      <div class="members-grid">
 
-        <div class="members-grid">
-          <article class="member-card">
-            <img src="https://i.ibb.co/4r4Yw4F/image.jpg" alt="كيم نامجون" class="member-photo">
-            <h3>كيم نامجون</h3>
-          </article>
+        <article class="member-card">
+          <img src="images/namjoon.jpg" alt="كيم نامجون" class="member-photo">
+          <h3>كيم نامجون</h3>
+        </article>
 
-          <article class="member-card">
-            <img src="https://i.ibb.co/rKkBMjzz/image.jpg" alt="كيم سوك جين" class="member-photo">
-            <h3>كيم سوك جين</h3>
-          </article>
+        <article class="member-card">
+          <img src="images/seokjin.jpg" alt="كيم سوك جين" class="member-photo">
+          <h3>كيم سوك جين</h3>
+        </article>
 
-          <article class="member-card">
-            <img src="https://i.ibb.co/yBW5DbVd/image.jpg" alt="مين يونغي" class="member-photo">
-            <h3>مين يونغي</h3>
-          </article>
+        <article class="member-card">
+          <img src="images/yoongi.jpg" alt="مين يونغي" class="member-photo">
+          <h3>مين يونغي</h3>
+        </article>
 
-          <article class="member-card">
-            <img src="https://i.ibb.co/sJ9k7Nky/image.jpg" alt="جون هوسوك" class="member-photo">
-            <h3>جون هوسوك</h3>
-          </article>
+        <article class="member-card">
+          <img src="images/hoseok.jpg" alt="جون هوسوك" class="member-photo">
+          <h3>جون هوسوك</h3>
+        </article>
 
-          <article class="member-card">
-            <img src="https://i.ibb.co/XrspTDxJ/image.jpg" alt="بارك جيمين" class="member-photo">
-            <h3>بارك جيمين</h3>
-          </article>
+        <article class="member-card">
+          <img src="images/jimin.jpg" alt="بارك جيمين" class="member-photo">
+          <h3>بارك جيمين</h3>
+        </article>
 
-          <article class="member-card">
-            <img src="https://i.ibb.co/Q79cTDfc/image.jpg" alt="كيم تايهونغ" class="member-photo">
-            <h3>كيم تايهونغ</h3>
-          </article>
+        <article class="member-card">
+          <img src="images/taehyung.jpg" alt="كيم تايهونغ" class="member-photo">
+          <h3>كيم تايهونغ</h3>
+        </article>
 
-          <article class="member-card">
-            <img src="https://i.ibb.co/tM0stFkp/image.jpg" alt="جيون جنغكوك" class="member-photo">
-            <h3>جيون جنغكوك</h3>
-          </article>
-        </div>
-      </section>
+        <article class="member-card">
+          <img src="images/jungkook.jpg" alt="جيون جنغكوك" class="member-photo">
+          <h3>جيون جنغكوك</h3>
+        </article>
 
-      <section class="section container" id="messages">
-        <div class="section-head">
-          <h2>ملاحظه جنقوقيه</h2>
-          <a href="#">المزيد</a>
-        </div>
+      </div>
+    </section>
 
-        <div class="message-box">
-          <p>“اقترح علينا افكار لتطوير الموقع،.”</p>
-        </div>
-        <div class="message-box">
-          <p>“ شارك لحظاتك في اللعبه.”</p>
-        </div>
-      </section>
-    </main>
+    <section class="section container wheel-section" id="wheel">
+      <div class="section-head">
+        <h2>عجلة النقاط</h2>
+        <span class="section-link">لف واربح</span>
+      </div>
 
-    <footer class="footer" id="talk">
-      <div class="container footer-content">
-        <p>© 2026 Hemily . جميع الحقوق محفوظة.</p>
-        <div class="footer-links">
-          <a href="#">شروط الاستخدام</a>
-          <a href="#">الخصوصية</a>
-          <a href="#">تواصل معنا</a>
+      <div class="wheel-area">
+        <div class="pointer"></div>
+
+        <div class="wheel" id="wheelBox">
+
+          <div class="slice slice-one">
+            <span>★<small>10</small></span>
+          </div>
+
+          <div class="slice slice-two">
+            <span>●<small>20</small></span>
+          </div>
+
+          <div class="slice slice-three">
+            <span>✦<small>30</small></span>
+          </div>
+
+          <div class="slice slice-four">
+            <span>✿<small>40</small></span>
+          </div>
+
+          <div class="slice slice-five">
+            <span>★<small>50</small></span>
+          </div>
+
+          <div class="slice slice-six">
+            <span>●<small>60</small></span>
+          </div>
+
+          <div class="slice slice-seven">
+            <span>✦<small>70</small></span>
+          </div>
+
+          <div class="wheel-center">
+            عجلة<br>
+            النقاط
+          </div>
+
         </div>
       </div>
-    </footer>
 
-    <!-- ربط ملف الجافاسكريبت الخارجي -->
-    <script src="script.js"></script>
-  </body>
+      <div class="wheel-controls">
+        <button id="spinBtn" type="button">لف العجلة</button>
+
+        <div class="score">
+          مجموع النقاط:
+          <span id="score">0</span>
+        </div>
+      </div>
+
+      <p id="result" class="result"></p>
+    </section>
+
+    <section class="section container" id="games">
+      <div class="section-head">
+        <h2>الألعاب اليوم</h2>
+        <a href="#">ابدأ اللعب</a>
+      </div>
+
+      <div class="grid cards-3">
+
+        <article class="info-card">
+          <h3>لعبة التحدي السريع</h3>
+          <p>أسئلة قصيرة وتفاعل ممتع مع الأعضاء.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>لعبة التخمين</h3>
+          <p>خمني الصورة أو العبارة في وقت قصير.</p>
+        </article>
+
+        <article class="info-card">
+          <h3>لعبة اليوم</h3>
+          <p>لعبة صغيرة تظهر في الصفحة الرئيسية يوميًا.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section container" id="messages">
+      <div class="section-head">
+        <h2>ملاحظة جنقوقية</h2>
+        <a href="#">المزيد</a>
+      </div>
+
+      <div class="message-box">
+        <p>“اقترحوا علينا أفكارًا لتطوير الموقع.”</p>
+      </div>
+
+      <div class="message-box">
+        <p>“شاركوا لحظاتكم في اللعبة.”</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 ARMY MAGICK. جميع الحقوق محفوظة.</p>
+
+      <div class="footer-links">
+        <a href="#">شروط الاستخدام</a>
+        <a href="#">الخصوصية</a>
+        <a href="#">تواصل معنا</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
