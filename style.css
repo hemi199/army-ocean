@@ -44,6 +44,17 @@ a{
 }
 
 .header{
+  <div class="side-decor">
+  <span class="star s1">★</span>
+  <span class="dot d1"></span>
+  <span class="star s2">✦</span>
+  <span class="dot d2"></span>
+  <span class="star s3">★</span>
+  <span class="dot d3"></span>
+  <span class="star s4">✦</span>
+  <span class="dot d4"></span>
+  <span class="star s5">★</span>
+</div>
   position:sticky;
   top:0;
   z-index:100;
